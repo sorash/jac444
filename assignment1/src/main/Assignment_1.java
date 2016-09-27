@@ -7,6 +7,7 @@ public class Assignment_1
 	private static Square s;
 	private static Rectangle r;
 	private static Parallelogram p;
+	private static Triangle t;
 
 	public static void main(String[] args)
 	{
@@ -41,5 +42,15 @@ public class Assignment_1
 		p.setWidth(32.74);
 		System.out.println("Parallelogram's length and width: " + p.getLength() + ", " + p.getWidth());
 		System.out.println("Parallelogram's perimeter: " + p.getPerimeter());
+		
+		System.out.println();
+		
+		// set a length for the triangle and show it and the perimeter
+		t = new Triangle();
+		t.setSide(0, 23.34);
+		t.setSide(1, 64.53);
+		t.setSide(2, 17.87);
+		System.out.println("Triangle's sides: " + t.getSide(0) + ", " + t.getSide(1) + ", " + t.getSide(2));
+		System.out.println("Triangle's perimeter: " + t.getPerimeter());
 	}
 }
