@@ -4,10 +4,15 @@ public class Circle implements Shape
 {
 	private static double radius;
 	
+	/**
+	 * Returns the perimeter of the circle.
+	 * 
+	 * @return 2PI*r to get the perimiter
+	 */
 	@Override
 	public double getPerimeter() 
 	{
-		return 0;
+		return 2 * Math.PI * radius;
 	}
 
 	/**
