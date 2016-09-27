@@ -12,7 +12,8 @@ public class Circle implements Shape
 	@Override
 	public double getPerimeter() 
 	{
-		return 2 * Math.PI * radius;
+		// round to 2 decimal places
+		return Math.round((2 * Math.PI * radius) * 100.00) / 100.00;
 	}
 
 	/**
