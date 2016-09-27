@@ -7,7 +7,7 @@ public class Circle implements Shape
 	/**
 	 * Returns the perimeter of the circle.
 	 * 
-	 * @return 2PI*r to get the perimiter
+	 * @return 2PI*r to get the perimeter
 	 */
 	@Override
 	public double getPerimeter() 
