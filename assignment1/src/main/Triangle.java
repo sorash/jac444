@@ -48,4 +48,25 @@ public class Triangle implements Shape
 	{
 		return "Rectangle-- Sides: " + sides[0] + ", " + sides[1] + ", " + sides[2] + ", Perimeter: " + getPerimeter(); 
 	}
+	
+	/**
+	 * Compare the triangle with another shape
+	 * 
+	 * @return false if the shape given is null
+	 * @return false if the shape given is not a triangle
+	 * @return true if shapes have the same side lengths
+	 */
+	@Override
+	public boolean equals(Shape shape)
+	{
+		if(this == shape)
+			return true;
+		if(shape == null)
+			return false;
+		if(!(shape instanceof Triangle))
+			return false;
+		return sides[0] == ((Triangle)shape).getSide(0) 
+				&& sides[1] == ((Triangle)shape).getSide(1)
+				&& sides[2] == ((Triangle)shape).getSide(2);
+	}
 }

@@ -2,7 +2,7 @@ package main;
 
 public class Square implements Shape
 {
-	private static double length;
+	private double length;
 	
 	/**
 	 * Returns the perimeter of the square.
@@ -32,7 +32,7 @@ public class Square implements Shape
 	 */
 	public void setLength(double length) 
 	{
-		Square.length = length;
+		this.length = length;
 	}
 
 	/**
@@ -44,5 +44,24 @@ public class Square implements Shape
 	public String toString()
 	{
 		return "Square-- Side length: " + length + ", Perimeter: " + getPerimeter(); 
+	}
+	
+	/**
+	 * Compare the square with another shape
+	 * 
+	 * @return false if the shape given is null
+	 * @return false if the shape given is not a square
+	 * @return true if shapes have the same side length
+	 */
+	@Override
+	public boolean equals(Shape shape)
+	{
+		if(this == shape)
+			return true;
+		if(shape == null)
+			return false;
+		if(!(shape instanceof Square))
+			return false;
+		return length == ((Square)shape).getLength();
 	}
 }

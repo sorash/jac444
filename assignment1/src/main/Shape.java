@@ -16,4 +16,11 @@ public interface Shape
 	 */
 	@Override
 	public String toString();
+	
+	/**
+	 * Compares two shapes.
+	 * 
+	 * @return true if shapes have the same attributes
+	 */
+	public boolean equals(Shape shape);
 }

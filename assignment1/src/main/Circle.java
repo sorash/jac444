@@ -2,7 +2,7 @@ package main;
 
 public class Circle implements Shape
 {
-	private static double radius;
+	private double radius;
 	
 	/**
 	 * Returns the perimeter of the circle.
@@ -33,7 +33,7 @@ public class Circle implements Shape
 	 */
 	public void setRadius(double radius) 
 	{
-		Circle.radius = radius;
+		this.radius = radius;
 	}
 	
 	/**
@@ -45,5 +45,24 @@ public class Circle implements Shape
 	public String toString()
 	{
 		return "Circle-- Radius: " + radius + ", Perimeter: " + getPerimeter(); 
+	}
+	
+	/**
+	 * Compare the circle with another shape
+	 * 
+	 * @return false if the shape given is null
+	 * @return false if the shape given is not a circle
+	 * @return true if shapes have the same radius
+	 */
+	@Override
+	public boolean equals(Shape shape)
+	{
+		if(this == shape)
+			return true;
+		if(shape == null)
+			return false;
+		if(!(shape instanceof Circle))
+			return false;
+		return radius == ((Circle)shape).getRadius();
 	}
 }

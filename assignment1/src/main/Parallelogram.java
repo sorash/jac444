@@ -2,7 +2,7 @@ package main;
 
 public class Parallelogram implements Shape
 {
-	private static double length, width;
+	private double length, width;
 	
 	/**
 	 * Returns the perimeter of the parallelogram.
@@ -33,7 +33,7 @@ public class Parallelogram implements Shape
 	 */
 	public void setLength(double length)
 	{
-		Parallelogram.length = length;
+		this.length = length;
 	}
 	
 	/**
@@ -53,7 +53,7 @@ public class Parallelogram implements Shape
 	 */
 	public void setWidth(double width)
 	{
-		Parallelogram.width = width;
+		this.width = width;
 	}
 	
 	/**
@@ -65,5 +65,24 @@ public class Parallelogram implements Shape
 	public String toString()
 	{
 		return "Parallelogram-- Length: " + length + ", Wdith: " + width + ", Perimeter: " + getPerimeter(); 
+	}
+	
+	/**
+	 * Compare the parallelogram with another shape
+	 * 
+	 * @return false if the shape given is null
+	 * @return false if the shape given is not a parallelogram
+	 * @return true if shapes have the same length and width
+	 */
+	@Override
+	public boolean equals(Shape shape)
+	{
+		if(this == shape)
+			return true;
+		if(shape == null)
+			return false;
+		if(!(shape instanceof Parallelogram))
+			return false;
+		return length == ((Parallelogram)shape).getLength() && width == ((Parallelogram)shape).getWidth();
 	}
 }
