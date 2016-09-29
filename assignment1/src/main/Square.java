@@ -38,7 +38,7 @@ public class Square implements Shape
 	/**
 	 * Prints out the square's field members.
 	 * 
-	 * @return Rectangle's side length and perimeter.
+	 * @return Square's side length and perimeter.
 	 */
 	@Override
 	public String toString()
