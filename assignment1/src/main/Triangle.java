@@ -46,7 +46,7 @@ public class Triangle implements Shape
 	@Override
 	public String toString()
 	{
-		return "Rectangle-- Sides: " + sides[0] + ", " + sides[1] + ", " + sides[2] + ", Perimeter: " + getPerimeter(); 
+		return "Rectangle-- Sides: " + sides[0] + ", " + sides[1] + ", " + sides[2] + ", Perimeter: " + getPerimeter() + ", HashCode: " + hashCode(); 
 	}
 	
 	/**
@@ -68,5 +68,23 @@ public class Triangle implements Shape
 		return sides[0] == ((Triangle)shape).getSide(0) 
 				&& sides[1] == ((Triangle)shape).getSide(1)
 				&& sides[2] == ((Triangle)shape).getSide(2);
+	}
+	
+	/**
+	 * Generates a hashcode unique per triangle based on it's member variables.
+	 * 
+	 * @return hashcode generated from side lengths
+	 */
+	@Override
+	public int hashCode()
+	{
+		long lSide0 = Double.doubleToLongBits(sides[0]);
+		long lSide1 = Double.doubleToLongBits(sides[1]);
+		long lSide2 = Double.doubleToLongBits(sides[2]);
+		int result = (int)(lSide0 ^ (lSide0 >>> 32));
+		result += (int)(lSide1 ^ (lSide1 >>> 32));
+		result += (int)(lSide2 ^ (lSide2 >>> 32));
+		result = (int) (37 * result + sides[0] + sides[1] + sides[2]);
+		return result;
 	}
 }

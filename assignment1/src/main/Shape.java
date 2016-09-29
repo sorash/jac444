@@ -23,4 +23,12 @@ public interface Shape
 	 * @return true if shapes have the same attributes
 	 */
 	public boolean equals(Shape shape);
+	
+	/**
+	 * Generates a hashcode unique per shape based on it's member variables.
+	 * 
+	 * @return hashcode generated from member fields
+	 */
+	@Override
+	public int hashCode();
 }

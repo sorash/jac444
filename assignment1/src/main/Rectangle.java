@@ -64,7 +64,7 @@ public class Rectangle implements Shape
 	@Override
 	public String toString()
 	{
-		return "Rectangle-- Length: " + length + ", Wdith: " + width + ", Perimeter: " + getPerimeter(); 
+		return "Rectangle-- Length: " + length + ", Wdith: " + width + ", Perimeter: " + getPerimeter() + ", HashCode: " + hashCode();
 	}
 	
 	/**
@@ -84,5 +84,21 @@ public class Rectangle implements Shape
 		if(!(shape instanceof Rectangle))
 			return false;
 		return (length == ((Rectangle)shape).getLength() && width == ((Rectangle)shape).getWidth());
+	}
+	
+	/**
+	 * Generates a hashcode unique per rectangle based on it's member variables.
+	 * 
+	 * @return hashcode generated from length and width
+	 */
+	@Override
+	public int hashCode()
+	{
+		long lLength = Double.doubleToLongBits(length);
+		long lWidth = Double.doubleToLongBits(width);
+		int result = (int)(lLength ^ (lLength >>> 32));
+		result += (int)(lWidth ^ (lWidth >>> 32));
+		result = (int) (37 * result + length + width);
+		return result;
 	}
 }

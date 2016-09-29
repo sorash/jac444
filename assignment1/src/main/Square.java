@@ -43,7 +43,7 @@ public class Square implements Shape
 	@Override
 	public String toString()
 	{
-		return "Square-- Side length: " + length + ", Perimeter: " + getPerimeter(); 
+		return "Square-- Side length: " + length + ", Perimeter: " + getPerimeter() + ", HashCode: " + hashCode(); 
 	}
 	
 	/**
@@ -63,5 +63,19 @@ public class Square implements Shape
 		if(!(shape instanceof Square))
 			return false;
 		return length == ((Square)shape).getLength();
+	}
+	
+	/**
+	 * Generates a hashcode unique per square based on it's member variables.
+	 * 
+	 * @return hashcode generated from side length
+	 */
+	@Override
+	public int hashCode()
+	{
+		long lLength = Double.doubleToLongBits(length);
+		int result = (int)(lLength ^ (lLength >>> 32));
+		result = (int) (37 * result + length);
+		return result;
 	}
 }

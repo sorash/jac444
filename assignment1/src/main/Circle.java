@@ -44,7 +44,7 @@ public class Circle implements Shape
 	@Override
 	public String toString()
 	{
-		return "Circle-- Radius: " + radius + ", Perimeter: " + getPerimeter(); 
+		return "Circle-- Radius: " + radius + ", Perimeter: " + getPerimeter() + ", HashCode: " + hashCode();
 	}
 	
 	/**
@@ -64,5 +64,19 @@ public class Circle implements Shape
 		if(!(shape instanceof Circle))
 			return false;
 		return radius == ((Circle)shape).getRadius();
+	}
+	
+	/**
+	 * Generates a hashcode unique per circle based on it's member variables.
+	 * 
+	 * @return hashcode generated from radius
+	 */
+	@Override
+	public int hashCode()
+	{
+		long lRadius = Double.doubleToLongBits(radius);
+		int result = (int)(lRadius ^ (lRadius >>> 32));
+		result = (int) (37 * result + radius);
+		return result;
 	}
 }
