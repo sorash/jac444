@@ -34,4 +34,15 @@ public class Square implements Shape
 	{
 		Square.length = length;
 	}
+
+	/**
+	 * Prints out the square's field members.
+	 * 
+	 * @return Rectangle's side length and perimeter.
+	 */
+	@Override
+	public String toString()
+	{
+		return "Square-- Side length: " + length + ", Perimeter: " + getPerimeter(); 
+	}
 }

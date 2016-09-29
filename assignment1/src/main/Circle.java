@@ -35,4 +35,15 @@ public class Circle implements Shape
 	{
 		Circle.radius = radius;
 	}
+	
+	/**
+	 * Prints out the circle's field members.
+	 * 
+	 * @return Circle's radius and perimeter.
+	 */
+	@Override
+	public String toString()
+	{
+		return "Circle-- Radius: " + radius + ", Perimeter: " + getPerimeter(); 
+	}
 }

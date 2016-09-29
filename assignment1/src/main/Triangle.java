@@ -37,4 +37,15 @@ public class Triangle implements Shape
 	{
 		sides[side] = value;
 	}
+	
+	/**
+	 * Prints out the triangle's field members.
+	 * 
+	 * @return triangle's sides and perimeter.
+	 */
+	@Override
+	public String toString()
+	{
+		return "Rectangle-- Sides: " + sides[0] + ", " + sides[1] + ", " + sides[2] + ", Perimeter: " + getPerimeter(); 
+	}
 }

@@ -55,4 +55,15 @@ public class Rectangle implements Shape
 	{
 		Rectangle.width = width;
 	}
+	
+	/**
+	 * Prints out the rectangle's field members.
+	 * 
+	 * @return Rectangle's length, width, and perimeter.
+	 */
+	@Override
+	public String toString()
+	{
+		return "Rectangle-- Length: " + length + ", Wdith: " + width + ", Perimeter: " + getPerimeter(); 
+	}
 }

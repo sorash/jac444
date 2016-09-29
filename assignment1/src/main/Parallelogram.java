@@ -55,4 +55,15 @@ public class Parallelogram implements Shape
 	{
 		Parallelogram.width = width;
 	}
+	
+	/**
+	 * Prints out the parallelogram's field members.
+	 * 
+	 * @return Parallelogram's length, width, and perimeter.
+	 */
+	@Override
+	public String toString()
+	{
+		return "Parallelogram-- Length: " + length + ", Wdith: " + width + ", Perimeter: " + getPerimeter(); 
+	}
 }
