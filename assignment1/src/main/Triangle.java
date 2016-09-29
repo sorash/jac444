@@ -5,6 +5,32 @@ public class Triangle implements Shape
 	private double[] sides = new double[3];
 	
 	/**
+	 * Constructs a triangle.
+	 * 
+	 * @param side1 value to be used for side 1 of triangle
+	 * @param side2 value to be used for side 2 of triangle
+	 * @param side3 value to be used for side 3 of triangle
+	 */
+	public Triangle(double side1, double side2, double side3)
+	{
+		this.sides[0] = side1;
+		this.sides[1] = side2;
+		this.sides[2] = side3;
+	}
+	
+	/**
+	 * Constructs a triangle.
+	 * 
+	 * @param sides array of side values to be used for triangle
+	 */
+	public Triangle(double sides[])
+	{
+		this.sides[0] = sides[0];
+		this.sides[1] = sides[1];
+		this.sides[2] = sides[2];
+	}
+	
+	/**
 	 * Returns the perimeter of the triangle.
 	 * 
 	 * @return sum of all sides to get the perimeter

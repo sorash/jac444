@@ -5,6 +5,18 @@ public class Rectangle implements Shape
 	private double length, width;
 	
 	/**
+	 * Constructs a rectangle.
+	 * 
+	 * @param length length value of the rectangle
+	 * @param width width value of the rectangle
+	 */
+	public Rectangle(double length, double width)
+	{
+		this.length = length;
+		this.width = width;
+	}
+	
+	/**
 	 * Returns the perimeter of the rectangle.
 	 * 
 	 * @return 2*length + 2*width to get the perimeter

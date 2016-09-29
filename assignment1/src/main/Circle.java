@@ -5,6 +5,16 @@ public class Circle implements Shape
 	private double radius;
 	
 	/**
+	 * Constructs a circle.
+	 * 
+	 * @param radius radius value of the circle
+	 */
+	public Circle(double radius)
+	{
+		this.radius = radius;
+	}
+	
+	/**
 	 * Returns the perimeter of the circle.
 	 * 
 	 * @return 2PI*r to get the perimeter

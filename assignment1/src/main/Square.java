@@ -5,6 +5,16 @@ public class Square implements Shape
 	private double length;
 	
 	/**
+	 * Constructs a square.
+	 * 
+	 * @param length side length value of the square
+	 */
+	public Square(double length)
+	{
+		this.length = length;
+	}
+	
+	/**
 	 * Returns the perimeter of the square.
 	 * 
 	 * @return 4*length to get the perimeter

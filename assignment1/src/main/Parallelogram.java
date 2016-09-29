@@ -5,6 +5,18 @@ public class Parallelogram implements Shape
 	private double length, width;
 	
 	/**
+	 * Constructs a parallelogram.
+	 * 
+	 * @param length length value of the parallelogram
+	 * @param width width value of the parallelogram
+	 */
+	public Parallelogram(double length, double width)
+	{
+		this.length = length;
+		this.width = width;
+	}
+	
+	/**
 	 * Returns the perimeter of the parallelogram.
 	 * 
 	 * @return 2*length + 2*width to get the perimeter
