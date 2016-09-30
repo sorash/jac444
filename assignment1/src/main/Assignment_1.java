@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * Main class of assignmet 1
+ * 
+ * @author Ashrafi 030
+ */
 public class Assignment_1 
 {
 	public static void main(String[] args)
@@ -35,7 +40,7 @@ public class Assignment_1
 		sll.deleteAtIndex(sll.length);
 		
 		// task 3
-		System.out.println("Deleting sq1...");
+		System.out.println("Deleting sq2...");
 		sll.deleteAtIndex(5);
 		
 		System.out.println();

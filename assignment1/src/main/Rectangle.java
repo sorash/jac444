@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * Rectangle shape
+ * 
+ * @author Ashrafi 030
+ */
 public class Rectangle implements Shape
 {
 	private double length, width;

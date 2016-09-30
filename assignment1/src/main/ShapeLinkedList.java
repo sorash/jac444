@@ -2,6 +2,8 @@ package main;
 
 /**
  * Link list containing geometrical Shapes
+ * 
+ * @author Ashrafi 030
  */
 public class ShapeLinkedList 
 {

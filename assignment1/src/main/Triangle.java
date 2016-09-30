@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * Triangle shape
+ * 
+ * @author Ashrafi 030
+ */
 public class Triangle implements Shape
 {
 	private double[] sides = new double[3];

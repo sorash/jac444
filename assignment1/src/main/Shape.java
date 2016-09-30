@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * Shape interface which other shapes implement
+ * 
+ * @author Ashrafi 030
+ */
 public interface Shape 
 {
 	/**

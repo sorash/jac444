@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * Square shape
+ * 
+ * @author Ashrafi 030
+ */
 public class Square implements Shape
 {
 	private double length;

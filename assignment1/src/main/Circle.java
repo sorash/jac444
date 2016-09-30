@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * Circle shape
+ * 
+ * @author Ashrafi 030
+ */
 public class Circle implements Shape
 {
 	private double radius;

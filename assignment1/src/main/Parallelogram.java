@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * Parallelogram shape
+ * 
+ * @author Ashrafi 030
+ */
 public class Parallelogram implements Shape
 {
 	private double length, width;
