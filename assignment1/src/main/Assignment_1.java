@@ -31,10 +31,14 @@ public class Assignment_1
 		System.out.println(sll.toString());
 		
 		// task 2
-		sll.deleteAtIndex(sll.length - 1);
+		System.out.println("Deleing last element of list...");
+		sll.deleteAtIndex(sll.length);
 		
 		// task 3
+		System.out.println("Deleting sq1...");
 		sll.deleteAtIndex(5);
+		
+		System.out.println();
 		
 		// print list again
 		System.out.println(sll.toString());
