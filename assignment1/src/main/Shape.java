@@ -10,7 +10,7 @@ public interface Shape
 	public double getPerimeter();
 	
 	/**
-	 * Prints out the shape's values.
+	 * Returns the shape's values.
 	 * 
 	 * @return the fields in the shape
 	 */
