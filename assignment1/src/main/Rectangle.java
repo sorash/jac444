@@ -76,7 +76,7 @@ public class Rectangle implements Shape
 	@Override
 	public String toString()
 	{
-		return "Rectangle-- Length: " + length + ", Wdith: " + width + ", Perimeter: " + getPerimeter() + ", HashCode: " + hashCode();
+		return "Rectangle-- Length: " + length + ", Width: " + width + ", Perimeter: " + getPerimeter() + ", HashCode: " + hashCode();
 	}
 	
 	/**
