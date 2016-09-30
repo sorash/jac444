@@ -95,7 +95,7 @@ public class Rectangle implements Shape
 			return false;
 		if(!(shape instanceof Rectangle))
 			return false;
-		return (length == ((Rectangle)shape).getLength() && width == ((Rectangle)shape).getWidth());
+		return length == ((Rectangle)shape).getLength() && width == ((Rectangle)shape).getWidth();
 	}
 	
 	/**
