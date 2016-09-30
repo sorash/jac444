@@ -72,7 +72,7 @@ public class Triangle implements Shape
 	@Override
 	public String toString()
 	{
-		return "Rectangle-- Sides: " + sides[0] + ", " + sides[1] + ", " + sides[2] + ", Perimeter: " + getPerimeter() + ", HashCode: " + hashCode(); 
+		return "Triangle-- Sides: " + sides[0] + ", " + sides[1] + ", " + sides[2] + ", Perimeter: " + getPerimeter() + ", HashCode: " + hashCode(); 
 	}
 	
 	/**
