@@ -69,7 +69,6 @@ public class ShapeLinkedList
 	 */
 	public void insertAtBeginning(Shape data) 
 	{
-		// TODO FIX YOUR SHIT SOROUSH
 		Node newNode = new Node(data, null);
 		Node currentNode = head;
 
