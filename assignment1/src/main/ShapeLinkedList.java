@@ -50,11 +50,9 @@ public class ShapeLinkedList
 
 		if(currentNode != null)
 		{
-			// find the first empty node
-			while(currentNode.getNext() != null)
+			for(int i = 1; i < length; i++)
 				currentNode = currentNode.getNext();
-
-			// set the next node to the new node given and increase the length of list
+		
 			currentNode.setNext(newNode);
 			length++;
 		}
