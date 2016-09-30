@@ -69,7 +69,7 @@ public class Parallelogram implements Shape
 	}
 	
 	/**
-	 * Prints out the parallelogram's field members.
+	 * Returns the parallelogram's field members.
 	 * 
 	 * @return Parallelogram's length, width, and perimeter.
 	 */

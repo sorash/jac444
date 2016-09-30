@@ -46,7 +46,7 @@ public class Square implements Shape
 	}
 
 	/**
-	 * Prints out the square's field members.
+	 * Returns the square's field members.
 	 * 
 	 * @return Square's side length and perimeter.
 	 */

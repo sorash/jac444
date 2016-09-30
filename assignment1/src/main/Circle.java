@@ -47,7 +47,7 @@ public class Circle implements Shape
 	}
 	
 	/**
-	 * Prints out the circle's field members.
+	 * Returns the circle's field members.
 	 * 
 	 * @return Circle's radius and perimeter.
 	 */

@@ -69,7 +69,7 @@ public class Rectangle implements Shape
 	}
 	
 	/**
-	 * Prints out the rectangle's field members.
+	 * Returns the rectangle's field members.
 	 * 
 	 * @return Rectangle's length, width, and perimeter.
 	 */

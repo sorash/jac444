@@ -65,7 +65,7 @@ public class Triangle implements Shape
 	}
 	
 	/**
-	 * Prints out the triangle's field members.
+	 * Returns the triangle's field members.
 	 * 
 	 * @return triangle's sides and perimeter.
 	 */
