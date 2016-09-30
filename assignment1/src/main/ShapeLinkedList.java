@@ -13,7 +13,7 @@ public class ShapeLinkedList
 	 */
 	public ShapeLinkedList() 
 	{ 
-		head = new Node(null, null);
+		head = null;
 		length = 0;
 	}
 
@@ -50,7 +50,7 @@ public class ShapeLinkedList
 
 		if(currentNode != null)
 		{
-			for(int i = 1; i < length; i++)
+			for(int i = 0; i < length; i++)
 				currentNode = currentNode.getNext();
 		
 			currentNode.setNext(newNode);
@@ -274,7 +274,7 @@ public class ShapeLinkedList
 		@Override
 		public String toString()
 		{
-			return "Node data: " + (data == null ? "null" : data.toString()) + ", Next Node: " + (next == null ? "null" : (next.data == null ? "null" : next.data.toString()));
+			return "Node data: " + data.toString() + ", Next Node: " + (next == null ? "null" : next.data.toString());
 		}
 
 		/**
