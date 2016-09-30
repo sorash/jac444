@@ -31,7 +31,7 @@ public class Assignment_1
 		System.out.println(sll.toString());
 		
 		// task 2
-		System.out.println("Deleing last element of list...");
+		System.out.println("Deleting last element of list...");
 		sll.deleteAtIndex(sll.length);
 		
 		// task 3
