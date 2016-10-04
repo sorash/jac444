@@ -89,9 +89,9 @@ public class Circle implements Shape
 	@Override
 	public int hashCode()
 	{
+		int result = 1;
 		long lRadius = Double.doubleToLongBits(radius);
-		int result = (int)(lRadius ^ (lRadius >>> 32));
-		result = (int) (37 * result + radius);
+		result = 37 * result + (int)(lRadius ^ (lRadius >>> 32));
 		return result;
 	}
 }

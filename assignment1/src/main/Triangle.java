@@ -109,13 +109,13 @@ public class Triangle implements Shape
 	@Override
 	public int hashCode()
 	{
+		int result = 1;
 		long lSide0 = Double.doubleToLongBits(sides[0]);
 		long lSide1 = Double.doubleToLongBits(sides[1]);
 		long lSide2 = Double.doubleToLongBits(sides[2]);
-		int result = (int)(lSide0 ^ (lSide0 >>> 32));
-		result += (int)(lSide1 ^ (lSide1 >>> 32));
-		result += (int)(lSide2 ^ (lSide2 >>> 32));
-		result = (int) (37 * result + sides[0] + sides[1] + sides[2]);
+		result = 37 * result + (int)(lSide0 ^ (lSide0 >>> 32));
+		result = 37 * result + (int)(lSide1 ^ (lSide1 >>> 32));
+		result = 37 * result + (int)(lSide2 ^ (lSide2 >>> 32));
 		return result;
 	}
 }

@@ -88,9 +88,9 @@ public class Square implements Shape
 	@Override
 	public int hashCode()
 	{
+		int result = 1;
 		long lLength = Double.doubleToLongBits(length);
-		int result = (int)(lLength ^ (lLength >>> 32));
-		result = (int) (37 * result + length);
+		result = 37 * result + (int)(lLength ^ (lLength >>> 32));
 		return result;
 	}
 }

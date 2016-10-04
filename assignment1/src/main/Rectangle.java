@@ -111,11 +111,11 @@ public class Rectangle implements Shape
 	@Override
 	public int hashCode()
 	{
+		int result = 1;
 		long lLength = Double.doubleToLongBits(length);
 		long lWidth = Double.doubleToLongBits(width);
-		int result = (int)(lLength ^ (lLength >>> 32));
-		result += (int)(lWidth ^ (lWidth >>> 32));
-		result = (int) (37 * result + length + width);
+		result = 37 * result + (int)(lLength ^ (lLength >>> 32));
+		result = 37 * result + (int)(lWidth ^ (lWidth >>> 32));
 		return result;
 	}
 }
