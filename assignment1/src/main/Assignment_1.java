@@ -1,7 +1,7 @@
 package main;
 
 /**
- * Main class of assignmet 1
+ * Main class of assignment 1
  * 
  * @author Ashrafi 030
  */
