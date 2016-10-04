@@ -41,7 +41,7 @@ public class Assignment_1
 		
 		// task 3
 		System.out.println("Deleting sq2...");
-		sll.deleteAtIndex(5);
+		sll.deleteData(sq2);
 		
 		System.out.println();
 		

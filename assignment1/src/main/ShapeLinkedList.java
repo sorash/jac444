@@ -192,10 +192,28 @@ public class ShapeLinkedList
 		return ret;
 	}
 
-	
-	void deleteData(Shape s) 
+	/**
+	 * Deletes a node that contains the given shape.
+	 * 
+	 * @param shape shape that node to be deleted contains
+	 */
+	void deleteData(Shape shape) 
 	{
-		// TODO to be implemented
+		Node current = head;
+		int index = 0;
+	
+		// find index of the node with the given shape
+		while(current.getNext() != null)
+		{
+			if(current.getData().equals(shape))
+				break;
+			
+			current = current.getNext();
+			index++;
+		}
+		
+		// delete the index with the given shape
+		deleteAtIndex(index);
 	}
 
 	/**
