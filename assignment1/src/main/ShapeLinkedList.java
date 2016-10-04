@@ -198,16 +198,36 @@ public class ShapeLinkedList
 		// TODO to be implemented
 	}
 
+	/**
+	 * Generates a hashcode unique per shape linked list based on it's member variables.
+	 * 
+	 * @return hashcode generated from head node and length of list
+	 */
 	@Override
 	public int hashCode() 
 	{
-		return 0;
+		int result = 1;
+		result = 37 * result + head.hashCode();
+		result = 37 * result + length;
+		return result;
 	}
 
+	/**
+	 * Compares shape linked list with object given.
+	 * 
+	 * @return false if object given is null
+	 * @return false if object is not a shape linked list
+	 * @return true if the lists have the same member fields
+	 */
 	@Override
-	public boolean equals(Object obj) 
+	public boolean equals(Object other) 
 	{
-		return false;
+		if(other == null)
+			return false;
+		if(!(other instanceof ShapeLinkedList))
+			return false;
+		
+		return head.equals(((ShapeLinkedList)other).head) && length == ((ShapeLinkedList)other).length;
 	}
 
 	// Node is nested class because it only exists along with linked list
@@ -280,18 +300,21 @@ public class ShapeLinkedList
 		}
 
 		/**
-		 * Compares two nodes.
+		 * Compares node with object given.
 		 * 
-		 * @return false if node given is null
+		 * @return false if object given is null
+		 * @return false if object is not a node
 		 * @return true if the nodes have the same member fields
 		 */
-		public boolean equals(Node other)
+		@Override
+		public boolean equals(Object other)
 		{
-			if(this == other)
-				return true;
 			if(other == null)
 				return false;
-			return data == other.getData() && next == other.getNext();
+			if(!(other instanceof Node))
+				return false;
+			
+			return data.equals(((Node)other).getData()) && next.equals(((Node)other).getNext());
 		}
 
 		/**
