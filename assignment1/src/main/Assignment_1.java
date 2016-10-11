@@ -39,13 +39,18 @@ public class Assignment_1
 		System.out.println("Deleting last element of list...");
 		sll.deleteAtIndex(sll.length);
 		
+		System.out.println();
+		
+		// print the list
+		System.out.println(sll.toString());
+		
 		// task 3
 		System.out.println("Deleting sq2...");
 		sll.deleteData(sq2);
 		
 		System.out.println();
 		
-		// print list again
+		// print the list
 		System.out.println(sll.toString());
 	}
 }
