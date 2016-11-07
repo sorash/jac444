@@ -92,11 +92,15 @@ class MobileDevice
 	}
 
 	@Override
-	public boolean equals(Object o) 
+	public boolean equals(Object other) 
 	{
-		//TODO
-		return false;
-
+		if(this == other)
+			return true;
+		if(other == null)
+			return false;
+		if(!(other instanceof MobileDevice))
+			return false;
+		return ((MobileDevice)other).deviceName.equals(deviceName) && ((MobileDevice)other).valueTag == valueTag;
 	}
 
 	@Override

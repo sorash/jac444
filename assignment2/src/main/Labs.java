@@ -8,10 +8,12 @@ public class Labs
 {
     public Lab[] labs;        // a collection of labs of type array
     public int numberOfLabs;  // number of labs in collection
+    private int counter = 0;
 
     public Labs(int numberOfLabs) 
     {
         this.numberOfLabs = numberOfLabs;
+        this.labs = new Lab[numberOfLabs];
     }
 
     public Lab addDevicesToLab(String labName, String labFileName) 
@@ -43,6 +45,12 @@ public class Labs
             	// add the device to the lab
             	lab.addDevice(md);
             }
+            
+            if(counter < numberOfLabs)
+            {
+            	labs[counter] = lab;
+            	counter++;
+            }
         } 
         catch (IOException e) 
         {
@@ -52,9 +60,20 @@ public class Labs
         return lab;
     }
 
+    /**
+     * Checks if any of the labs have the given device.
+     * @param md device to look for
+     * @return the first lab found with the device given
+     * @return null if no labs have the given device
+     */
     public Lab isThereDeviceInLabs(MobileDevice md) 
-    {
-        //TODO
+    {  	
+        for(Lab lab : labs)
+        {
+        	if(lab.isThereDevice(md))
+        		return lab;
+        }
+        
         return null;
     }
 

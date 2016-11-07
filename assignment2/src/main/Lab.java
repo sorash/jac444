@@ -41,7 +41,13 @@ public class Lab implements MaxTagValue
      */
     public boolean isThereDevice(MobileDevice md) 
     {
-        return devices.contains(md);
+    	for(MobileDevice device : devices)
+    	{
+    		if(device.equals(md))
+    			return true;
+    	}
+    	
+        return false;
     }
 
     public int findMaximumValueTag() 
