@@ -110,7 +110,15 @@ class MobileDevice
 	@Override
 	public String toString() 
 	{
-		return deviceName();
+		String ret = "";
+		
+		// check if device belongs to a lab
+		if(lab == null)
+			ret = deviceName();
+		else
+			ret = '(' + deviceName + ", " + valueTag + " => " + lab.labName + ')';
+		
+		return ret;
 	}
 
 	/**

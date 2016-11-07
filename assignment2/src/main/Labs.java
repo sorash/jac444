@@ -38,6 +38,7 @@ public class Labs
             	
             	// create a new mobile device from the data
             	md = new MobileDevice(tokens[0], Integer.parseInt(tokens[1]));
+            	md.setLab(lab);
             	
             	// add the device to the lab
             	lab.addDevice(md);

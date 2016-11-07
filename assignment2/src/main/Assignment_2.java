@@ -12,10 +12,10 @@ public class Assignment_2
         System.out.println("\n\n *" + " TASK 1 " + "*");
         Labs labs = new Labs(2);
         System.out.println("Newnham Lab\n-----------");
-        labs.addDevicesToLab("Newnham Lab", "NewnhamLab.txt");
+        labs.addDevicesToLab("Seneca@York", "YorkLab.txt");
         System.out.println();
         System.out.println("York Lab\n--------");
-        labs.addDevicesToLab("York Lab", "YorkLab.txt");
+        labs.addDevicesToLab("Newnham", "NewnhamLab.txt");
         
         /* TASK 2 - ask for a device that is not in any lab inventory */
 
