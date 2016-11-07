@@ -10,7 +10,12 @@ public class Assignment_2
         /* TASK 1 - build labs from files - at least two labs */
 
         System.out.println("\n\n *" + " TASK 1 " + "*");
-        //TODO
+        Labs labs = new Labs(2);
+        System.out.println("Newnham Lab\n-----------");
+        labs.addDevicesToLab("Newnham Lab", "NewnhamLab.txt");
+        System.out.println();
+        System.out.println("York Lab\n--------");
+        labs.addDevicesToLab("York Lab", "YorkLab.txt");
         
         /* TASK 2 - ask for a device that is not in any lab inventory */
 

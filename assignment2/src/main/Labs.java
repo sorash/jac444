@@ -11,7 +11,7 @@ public class Labs
 
     public Labs(int numberOfLabs) 
     {
-        //TODO
+        this.numberOfLabs = numberOfLabs;
     }
 
     public Lab addDevicesToLab(String labName, String labFileName) 
@@ -27,11 +27,20 @@ public class Labs
         MobileDevice md = null;
         String s;
 
-        try (BufferedReader br = new BufferedReader(new FileReader("./Root/" + fileName))) 
+        // read the data file
+        try (BufferedReader br = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/src/" + fileName))) 
         {
+        	// loop through all lines
             while ((s = br.readLine()) != null) 
             {
-               //TODO
+            	// split the line by the comma delimiter
+            	String[] tokens = s.split(",", -1);
+            	
+            	// create a new mobile device from the data
+            	md = new MobileDevice(tokens[0], Integer.parseInt(tokens[1]));
+            	
+            	// add the device to the lab
+            	lab.addDevice(md);
             }
         } 
         catch (IOException e) 

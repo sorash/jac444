@@ -1,6 +1,5 @@
 package main;
 
-import java.util.Iterator;
 import java.util.Vector;
 
 public class Lab implements MaxTagValue 
@@ -10,28 +9,39 @@ public class Lab implements MaxTagValue
 
     public Lab(String labName) 
     {
-        //TODO
+        this.labName = labName;
+        devices = new Vector<MobileDevice>();
     }
 
+    /**
+     * Adds a device to the list of devices in lab.
+     * @param md device to be added to list
+     */
     public void addDevice(MobileDevice md) 
     {
-        //TODO
+        devices.addElement(md);
     }
 
     @Override
     public String toString() 
     {
-        String r = "";
-        //TODO
-        return r;
+        String ret = "";
+        
+        // loop through all devices and add them to return string
+        for(Object device : devices)
+        	ret += ((MobileDevice)device).toString() + '\n';
+        
+        return ret;
     }
 
-    //
+    /**
+     * Checks if a device is in the lab.
+     * @param md device to check in the list for
+     * @return true if the lab has the device
+     */
     public boolean isThereDevice(MobileDevice md) 
     {
-        boolean found = false;
-        //TODO
-        return found;
+        return devices.contains(md);
     }
 
     public int findMaximumValueTag() 
