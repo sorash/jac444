@@ -28,7 +28,7 @@ public class Lab implements MaxTagValue
         String ret = "";
         
         // loop through all devices and add them to return string
-        for(Object device : devices)
+        for(MobileDevice device : devices)
         	ret += ((MobileDevice)device).toString() + '\n';
         
         return ret;
