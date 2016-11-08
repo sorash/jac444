@@ -50,18 +50,33 @@ public class Lab implements MaxTagValue
         return false;
     }
 
+    /**
+     * Find the highest value tag from all devies in lab.
+     * @return highgest value tag
+     */
     public int findMaximumValueTag() 
     {
-       //TODO
-       return 0;
+       int max = devices.firstElement().valueTag;
+       
+       for(MobileDevice device : devices)
+       {
+    	   if(device.valueTag > max)
+    		   max = device.valueTag;
+       }
+       
+       return max;
     }
 
     @Override
-    public boolean equals(Object o) 
+    public boolean equals(Object other) 
     {
-        //TODO
-        return false;
-
+    	if(this == other)
+			return true;
+		if(other == null)
+			return false;
+		if(!(other instanceof Lab))
+			return false;
+		return ((Lab)other).labName.equals(labName) && ((Lab)other).devices.equals(devices);
     }
 
     @Override
