@@ -22,10 +22,8 @@ public class Assignment_2
         System.out.println("\n\n *" + " TASK 2 " + "*");
         MobileDevice device = new MobileDevice("Android20", 20);
         Lab lab = labs.isThereDeviceInLabs(device);
-        if(lab != null)
-        	System.out.println("Device " + device.toString() + " exists in " + lab.labName + ".");
-        else
-        	System.out.println("Device " + device.toString() + " does not exist!");
+        if(lab == null)
+        	System.out.println(Helper.printNonexistent(device));
 
          /* TASK 3 - ask for a device that is in a lab inventory
          *  issue a rent request and print the device
