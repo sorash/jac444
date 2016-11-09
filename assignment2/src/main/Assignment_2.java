@@ -34,7 +34,16 @@ public class Assignment_2
          *  issue the rent request with new dates and print the device
          */
         System.out.println("\n\n *" + " TASK 3 " + "*");
-        //TODO
+        device = new MobileDevice("Android", 25);
+        lab = labs.rentDeviceAvailable(device, Helper.getCurrentDate(), "11/11/2016");
+        if(lab != null)
+        	System.out.println("Device " + device.deviceName(false) + 
+        			" is available at " + Helper.getCurrentDate() + 
+        			" from lab: " + lab.labName);
+        	
+        lab.rentRequest(device, Helper.getCurrentDate(), "11/11/2016");
+        
+        
         
          /* TASK 4 - ask for the same device in all labs
           * if you can find a lab, rent the device from that lab

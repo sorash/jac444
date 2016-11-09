@@ -2,6 +2,8 @@ package main;
 
 import java.util.Vector;
 
+import main.MobileDevice.RentSettings;
+
 public class Lab implements MaxTagValue 
 {
     String labName;
@@ -90,7 +92,10 @@ public class Lab implements MaxTagValue
 
     public boolean rentRequest(MobileDevice wanted, String requestDate, String dueDate) 
     {
-        //TODO
-        return true;
+    	// check if device is rented and try to rent it
+        if(!wanted.isRented(this))
+        	return wanted.rentDevice(requestDate, dueDate, this);
+        
+        return false;
     }
 }

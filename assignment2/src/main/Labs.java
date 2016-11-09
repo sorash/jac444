@@ -79,9 +79,12 @@ public class Labs
 
     public Lab rentDeviceAvailable(MobileDevice md, String requestDate, String dueDate) 
     {
-        Lab foundLab = null;
-
-        //TODO
-        return foundLab;
+        for(Lab lab : labs)
+        {
+        	if(lab.rentRequest(md, requestDate, dueDate))
+        		return lab;
+        }
+        
+        return null;
     }
 }

@@ -41,16 +41,16 @@ class MobileDevice
 		}
 		catch(DateFormatException exc)
 		{
-			System.out.println(exc.toString());
+			System.out.println("DateFormatException when trying to rent device.");
 			return false;
 		}
 		catch(RentPeriodException exc)
 		{
-			System.out.println(exc.toString());
+			System.out.println("RentPriodException when trying to rent device.");
 			return false;
 		}
 
-		this.rs = rs;
+		setRs(rs);
 		return true;
 	}
 
@@ -70,25 +70,53 @@ class MobileDevice
 	// returns true if the current date is greater than the due date
 	public boolean isDeviceOverdue() 
 	{
-		//TODO
-		return false;
+		String curDate = Helper.getCurrentDate();
+		boolean overdue = false;
+		
+		try
+		{
+			overdue = (Helper.timeDifference(curDate, rs.dueDate) < 0);
+		}
+		catch(DateFormatException exc)
+		{
+			System.out.println("DateFormatException when checking for overdue device.");
+		}
+		
+		return overdue;
 	}
 
 	public boolean isRented(Lab l) 
 	{
-		//TODO
-		return false;
+		return lab != null && lab.equals(l);
 	}
 
+	/**
+	 * Get rent settings for device.
+	 * @return rent settings used for device
+	 */
 	public RentSettings getRs()
 	{
-		//TODO
-		return null;
+		return rs;
 	}
 
+	/**
+	 * Set rent settings for device.
+	 * @param rs settings to apply to device
+	 */
 	public void setRs(RentSettings rs) 
 	{
-		//TODO
+		try 
+		{
+			this.rs = new RentSettings(rs.rentDate, rs.dueDate, lab);
+		} 
+		catch (DateFormatException e) 
+		{
+			System.out.println("DateFormatException when setting device rent settings.");
+		}
+		catch (RentPeriodException e) 
+		{
+			System.out.println("RentPeriodException when setting device rent settings.");
+		}
 	}
 
 	@Override
@@ -117,10 +145,7 @@ class MobileDevice
 		String ret = "";
 		
 		// check if device belongs to a lab
-		if(lab == null)
-			ret = deviceName();
-		else
-			ret = '(' + deviceName + ", " + valueTag + " => " + lab.labName + ')';
+		ret = lab == null ? deviceName(false) : deviceName(true);
 		
 		return ret;
 	}
@@ -129,12 +154,12 @@ class MobileDevice
 	 * Get device attributes as a string.
 	 * @return device name and value tag
 	 */
-	public String deviceName() 
+	public String deviceName(boolean printLab) 
 	{
-		return "(" + deviceName + ", " + valueTag + ')';
+		return "(" + deviceName + ", " + valueTag + (printLab ? " => " + lab.labName + ')' : ')');
 	}
 
-	private class RentSettings 
+	class RentSettings 
 	{
 		private String rentDate;          // date when the item is requested
 		private String dueDate;           // date when the item must be returned
@@ -158,6 +183,7 @@ class MobileDevice
 
 				this.rentDate = rentDate;
 				this.dueDate = dueDate;
+				setLab(lab);
 			}
 			else
 				throw new DateFormatException();
