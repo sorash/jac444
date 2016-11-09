@@ -35,9 +35,7 @@ public class Assignment_2
         device = new MobileDevice("Android", 25);
         lab = labs.rentDeviceAvailable(device, Helper.getCurrentDate(), "11/11/2016");
         if(lab != null)
-        	System.out.println("Device " + device.deviceName(false) + 
-        			" is available at " + Helper.getCurrentDate() + 
-        			" from lab: " + lab.labName);
+        	System.out.println(Helper.printAvailable(device, Helper.getCurrentDate(), lab));
         	
         lab.rentRequest(device, Helper.getCurrentDate(), "11/11/2016");
         
