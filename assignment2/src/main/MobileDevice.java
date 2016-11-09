@@ -105,18 +105,7 @@ class MobileDevice
 	 */
 	public void setRs(RentSettings rs) 
 	{
-		try 
-		{
-			this.rs = new RentSettings(rs.rentDate, rs.dueDate, lab);
-		} 
-		catch (DateFormatException e) 
-		{
-			System.out.println("DateFormatException when setting device rent settings.");
-		}
-		catch (RentPeriodException e) 
-		{
-			System.out.println("RentPeriodException when setting device rent settings.");
-		}
+		this.rs = rs;
 	}
 
 	@Override
@@ -142,10 +131,14 @@ class MobileDevice
 	@Override
 	public String toString() 
 	{
-		String ret = "";
+		String ret;
 		
 		// check if device belongs to a lab
-		ret = lab == null ? deviceName(false) : deviceName(true);
+		ret = (lab == null ? deviceName(false) : deviceName(true));
+		
+		// check if device is rented
+		if(rs != null)
+			ret += " " + rs.toString();
 		
 		return ret;
 	}
@@ -183,6 +176,7 @@ class MobileDevice
 
 				this.rentDate = rentDate;
 				this.dueDate = dueDate;
+				this.borrowed = true;
 				setLab(lab);
 			}
 			else

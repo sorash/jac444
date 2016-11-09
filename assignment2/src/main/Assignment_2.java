@@ -33,13 +33,18 @@ public class Assignment_2
          */
         System.out.println("\n\n *" + " TASK 3 " + "*");
         device = new MobileDevice("Android", 25);
-        lab = labs.rentDeviceAvailable(device, Helper.getCurrentDate(), "11/11/2016");
-        if(lab != null)
-        	System.out.println(Helper.printAvailable(device, Helper.getCurrentDate(), lab));
-        	
-        lab.rentRequest(device, Helper.getCurrentDate(), "11/11/2016");
         
-        
+        for(int i = 0; i < 3; i++)
+        {
+        	lab = labs.rentDeviceAvailable(device, Helper.getCurrentDate(), "11/11/2016");
+	        if(lab != null)
+	        	System.out.println(Helper.printAvailable(device, Helper.getCurrentDate(), lab));
+	        else
+	        	System.out.println(Helper.printUnavailable(device, Helper.getCurrentDate()));
+	        
+	        lab.rentRequest(device, Helper.getCurrentDate(), "11/11/2016");
+	        System.out.println("wanted = " + device.toString());
+        }
         
          /* TASK 4 - ask for the same device in all labs
           * if you can find a lab, rent the device from that lab
