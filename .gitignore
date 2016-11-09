@@ -26,3 +26,4 @@ atlassian-ide-plugin.xml
 bin/
 local.properties
 .recommenders/
+RemoteSystemsTempFiles/
