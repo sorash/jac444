@@ -117,7 +117,7 @@ public class Labs
     {
     	Vector<Lab> allLabs = new Vector<Lab>();
     	
-    	for(int i = 0; i < labs.length; i++)
+    	for(int i = 0; i < numberOfLabs; i++)
     	{
     		if(labs[i].isThereDevice(md))
     			allLabs.addElement(labs[i]);
