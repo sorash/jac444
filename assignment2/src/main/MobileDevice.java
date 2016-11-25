@@ -37,7 +37,8 @@ class MobileDevice
 
 		try
 		{
-			rs = new RentSettings(rentDate, dueDate, lab);
+			if(Helper.timeDifference(dueDate, availableDate(lab)) > 0)
+				rs = new RentSettings(rentDate, dueDate, lab);
 		}
 		catch(DateFormatException exc)
 		{
@@ -63,8 +64,7 @@ class MobileDevice
 	// return the date when this device is available
 	public String availableDate(Lab lab) 
 	{
-		//TODO
-		return "";
+		return rs == null ? Helper.getCurrentDate() : rs.dueDate;
 	}
 
 	// returns true if the current date is greater than the due date
@@ -87,7 +87,7 @@ class MobileDevice
 
 	public boolean isRented(Lab l) 
 	{
-		return lab != null && lab.equals(l);
+		return rs != null;
 	}
 
 	/**
@@ -154,8 +154,8 @@ class MobileDevice
 
 	class RentSettings 
 	{
-		private String rentDate;          // date when the item is requested
-		private String dueDate;           // date when the item must be returned
+		public String rentDate;          // date when the item is requested
+		public String dueDate;           // date when the item must be returned
 		private boolean borrowed = false; // true if the item is rented
 
 		//default ctr
@@ -177,7 +177,6 @@ class MobileDevice
 				this.rentDate = rentDate;
 				this.dueDate = dueDate;
 				this.borrowed = true;
-				setLab(lab);
 			}
 			else
 				throw new DateFormatException();

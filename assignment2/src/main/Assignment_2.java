@@ -33,18 +33,39 @@ public class Assignment_2
          */
         System.out.println("\n\n *" + " TASK 3 " + "*");
         device = new MobileDevice("Android", 25);
+        String rentDate = "11/09/2016", dueDate = "11/11/2016";
         
-        for(int i = 0; i < 3; i++)
+        lab = labs.rentDeviceAvailable(device, rentDate, dueDate);
+        if(lab != null)
         {
-        	lab = labs.rentDeviceAvailable(device, Helper.getCurrentDate(), "11/11/2016");
-	        if(lab != null)
-	        	System.out.println(Helper.printAvailable(device, Helper.getCurrentDate(), lab));
-	        else
-	        	System.out.println(Helper.printUnavailable(device, Helper.getCurrentDate()));
-	        
-	        lab.rentRequest(device, Helper.getCurrentDate(), "11/11/2016");
-	        System.out.println("wanted = " + device.toString());
+        	System.out.println(Helper.printAvailable(device, rentDate, lab));
+            device.rentDevice(rentDate, dueDate, lab);
+            System.out.println("wanted = " + device);
         }
+        else
+        	System.out.println(Helper.printUnavailable(device, rentDate));        
+        
+        lab = labs.rentDeviceAvailable(device, rentDate, dueDate);
+        if(lab != null)
+        {
+        	System.out.println(Helper.printAvailable(device, rentDate, lab));
+            device.rentDevice(rentDate, dueDate, lab);
+            System.out.println("wanted = " + device);
+        }
+        else
+        	System.out.println(Helper.printUnavailable(device, rentDate));
+        
+        rentDate = "11/12/2016";
+        dueDate = "11/14/2016";
+        lab = labs.rentDeviceAvailable(device, rentDate, dueDate);
+        if(lab != null)
+        {
+        	System.out.println(Helper.printAvailable(device, rentDate, lab));
+            device.rentDevice(rentDate, dueDate, lab);
+            System.out.println("wanted = " + device);
+        }
+        else
+        	System.out.println(Helper.printUnavailable(device, rentDate));
         
          /* TASK 4 - ask for the same device in all labs
           * if you can find a lab, rent the device from that lab
