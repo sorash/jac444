@@ -3,6 +3,7 @@ package main;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Vector;
 
 public class Labs 
 {
@@ -105,5 +106,23 @@ public class Labs
         }
         
         return null;
+    }
+    
+    /**
+     * Finds all the labs that contain given device in their inventory.
+     * @param md device to look for
+     * @return vector of labs that have the device
+     */
+    public Vector<Lab> findDeviceInAllLabs(MobileDevice md)
+    {
+    	Vector<Lab> allLabs = new Vector<Lab>();
+    	
+    	for(int i = 0; i < labs.length; i++)
+    	{
+    		if(labs[i].isThereDevice(md))
+    			allLabs.addElement(labs[i]);
+    	}
+    	
+    	return allLabs;
     }
 }
