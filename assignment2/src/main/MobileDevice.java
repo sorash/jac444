@@ -54,11 +54,8 @@ class MobileDevice
 	// destroy the RentSettings object for this device
 	public void returnDevice(Lab lab) 
 	{
-		if(this.lab.equals(lab))
-		{
-			setRs(null);
-			setLab(null);
-		}
+		setRs(null);
+		setLab(null);
 	}
 
 	// return the date when this device is available
