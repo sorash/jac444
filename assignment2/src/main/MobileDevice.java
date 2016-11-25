@@ -64,9 +64,7 @@ class MobileDevice
 	// return the date when this device is available
 	public String availableDate(Lab lab) 
 	{
-		if(this.lab.equals(lab))
-			return rs == null ? Helper.getCurrentDate() : rs.dueDate;
-		return Helper.getCurrentDate();
+		return rs == null ? Helper.getCurrentDate() : rs.dueDate;
 	}
 
 	// returns true if the current date is greater than the due date

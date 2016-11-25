@@ -103,6 +103,6 @@ public class Assignment_2
 		System.out.println("Device " + device.deviceName + " is rented: " + device.isRented(lab));
 		System.out.println("Device " + device.deviceName + " is overdue: " + device.isDeviceOverdue());
 		System.out.println("Device " + device.deviceName + " is found in more than one lab: " + (allLabs.size() > 1 ? true : false));
-		System.out.println("Device " + device.deviceName + " is return date: " + device.availableDate(lab));
+		System.out.println("Device " + device.deviceName + " return date: " + device.availableDate(lab));
 	}
 }
