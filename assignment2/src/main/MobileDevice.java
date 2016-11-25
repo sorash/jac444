@@ -3,7 +3,6 @@ package main;
 /**
  * Mobile devices that are contained in lab inventories.
  * @author Ashrafi 030
- *
  */
 class MobileDevice 
 {
