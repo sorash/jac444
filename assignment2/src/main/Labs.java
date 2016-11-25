@@ -125,4 +125,22 @@ public class Labs
     	
     	return allLabs;
     }
+    
+    /**
+     * Finds all the labs that given device can be rented from.
+     * @param md device to look for
+     * @return vector of labs that device can be rented from
+     */
+    public Vector<Lab> findRentalDeviceInAllLabs(MobileDevice md)
+    {
+    	Vector<Lab> allLabs = new Vector<Lab>();
+    	
+    	for(int i = 0; i < numberOfLabs; i++)
+    	{
+    		if(labs[i].canRent(md))
+    			allLabs.addElement(labs[i]);
+    	}
+    	
+    	return allLabs;
+    }
 }

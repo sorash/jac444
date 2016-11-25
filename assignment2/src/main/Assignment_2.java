@@ -81,6 +81,15 @@ public class Assignment_2
 		}
 		else
 			System.out.println(Helper.printNonexistent(device));
+		
+		allLabs = labs.findRentalDeviceInAllLabs(device);
+		if(allLabs != null)
+		{
+			for(Lab l : allLabs)
+				System.out.println("Lab " + l.labName + " has device " + device.deviceName + " available for rent");
+		}
+		else
+			System.out.println(Helper.printNonexistent(device));
 
 		/* TASK 5 - calculate maximum value tag for each lab */
 		System.out.println("\n\n *" + " TASK 5 " + "*");

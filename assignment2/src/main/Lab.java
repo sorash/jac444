@@ -112,4 +112,23 @@ public class Lab implements MaxTagValue
         
         return false;
     }
+    
+    /**
+     * Checks if a given device can be rented.
+     * @param md device to check for
+     * @return true if device can be rented
+     */
+    public boolean canRent(MobileDevice md)
+    {
+    	for(MobileDevice device : devices)
+    	{
+    		if(device.equals(md))
+    		{
+    			if(!device.isRented(this))
+    				return true;
+    		}
+    	}
+    	
+    	return false;
+    }
 }
