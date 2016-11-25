@@ -46,12 +46,12 @@ public class Assignment_2
 		}
 		else
 			System.out.println(Helper.printUnavailable(device, rentDate));        
-
-		lab = labs.rentDeviceAvailable(device, rentDate, dueDate);
-		if(lab != null)
+		
+		Lab lab2 = labs.rentDeviceAvailable(device, rentDate, dueDate);
+		if(lab2 != null)
 		{
-			System.out.println(Helper.printAvailable(device, rentDate, lab));
-			device.rentDevice(rentDate, dueDate, lab);
+			System.out.println(Helper.printAvailable(device, rentDate, lab2));
+			device.rentDevice(rentDate, dueDate, lab2);
 			System.out.println("wanted = " + device);
 		}
 		else

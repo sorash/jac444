@@ -36,7 +36,7 @@ class MobileDevice
 		try
 		{
 			setRs(new RentSettings(rentDate, dueDate, lab));
-			this.lab = lab;
+			setLab(lab);
 			return true;
 		}
 		catch(DateFormatException exc)
@@ -54,14 +54,19 @@ class MobileDevice
 	// destroy the RentSettings object for this device
 	public void returnDevice(Lab lab) 
 	{
-		setRs(null);
-		setLab(null);
+		if(this.lab.equals(lab))
+		{
+			setRs(null);
+			setLab(null);
+		}
 	}
 
 	// return the date when this device is available
 	public String availableDate(Lab lab) 
 	{
-		return rs == null ? Helper.getCurrentDate() : rs.dueDate;
+		if(this.lab.equals(lab))
+			return rs == null ? Helper.getCurrentDate() : rs.dueDate;
+		return Helper.getCurrentDate();
 	}
 
 	// returns true if the current date is greater than the due date
@@ -89,7 +94,9 @@ class MobileDevice
 	 */
 	public boolean isRented(Lab l) 
 	{
-		return (rs != null ? rs.getBorrowed() : false);
+		if(this.lab != null && this.lab.equals(lab))
+			return (rs != null ? rs.getBorrowed() : false);
+		return false;
 	}
 
 	/**

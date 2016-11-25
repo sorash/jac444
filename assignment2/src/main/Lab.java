@@ -124,7 +124,7 @@ public class Lab implements MaxTagValue
     	{
     		if(device.equals(md))
     		{
-    			if(!device.isRented(this))
+    			if(!md.lab.equals(this))
     				return true;
     		}
     	}
