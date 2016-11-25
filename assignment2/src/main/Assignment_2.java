@@ -82,10 +82,10 @@ public class Assignment_2
 		else
 			System.out.println(Helper.printNonexistent(device));
 		
-		allLabs = labs.findRentalDeviceInAllLabs(device);
-		if(allLabs != null)
+		Vector<Lab> allRentLabs = labs.findRentalDeviceInAllLabs(device);
+		if(allRentLabs != null)
 		{
-			for(Lab l : allLabs)
+			for(Lab l : allRentLabs)
 				System.out.println("Lab " + l.labName + " has device " + device.deviceName + " available for rent");
 		}
 		else
