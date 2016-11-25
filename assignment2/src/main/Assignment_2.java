@@ -85,5 +85,12 @@ public class Assignment_2
 		/* TASK 5 - calculate maximum value tag for each lab */
 		System.out.println("\n\n *" + " TASK 5 " + "*");
 		System.out.println("Maximum value tag for lab " + lab.labName + " is: " + lab.findMaximumValueTag());
+		
+		/* TASK 6 - inquire about a device */
+		System.out.println("\n\n *" + " TASK 6 " + "*");
+		System.out.println("Device " + device.deviceName + " is rented: " + device.isRented(lab));
+		System.out.println("Device " + device.deviceName + " is overdue: " + device.isDeviceOverdue());
+		System.out.println("Device " + device.deviceName + " is found in more than one lab: " + (allLabs.size() > 1 ? true : false));
+		System.out.println("Device " + device.deviceName + " is return date: " + device.availableDate(lab));
 	}
 }
