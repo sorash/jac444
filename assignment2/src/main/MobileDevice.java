@@ -85,6 +85,11 @@ class MobileDevice
 		return overdue;
 	}
 
+	/**
+	 * Checks whether the device is rented.
+	 * @param l lab to check for
+	 * @return true if device is rented
+	 */
 	public boolean isRented(Lab l) 
 	{
 		return (rs != null ? rs.getBorrowed() : false);
@@ -192,6 +197,10 @@ class MobileDevice
 					'}';
 		}
 
+		/**
+		 * Returns whether the rent setting states it is in borrowed state.
+		 * @return borrowed state
+		 */
 		public boolean getBorrowed()
 		{
 			return borrowed;

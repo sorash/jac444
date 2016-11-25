@@ -89,7 +89,13 @@ public class Lab implements MaxTagValue
         return result;
     }
 
-
+    /**
+     * Tries to rent a device.
+     * @param wanted device to rent
+     * @param requestDate rent request date
+     * @param dueDate rent due date
+     * @return true if device was rented
+     */
     public boolean rentRequest(MobileDevice wanted, String requestDate, String dueDate) 
     {
     	// check if device is rented and try to rent it

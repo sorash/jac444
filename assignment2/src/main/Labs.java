@@ -16,6 +16,12 @@ public class Labs
         this.labs = new Lab[numberOfLabs];
     }
 
+    /**
+     * Adds devices to a lab's inventory from a data file.
+     * @param labName lab to add devices to
+     * @param labFileName file name to read devices from
+     * @return
+     */
     public Lab addDevicesToLab(String labName, String labFileName) 
     {
         Lab lab = buildLabFromFile(labName, labFileName);
@@ -23,6 +29,12 @@ public class Labs
         return lab;
     }
 
+    /**
+     * Creates lab data from given data file.
+     * @param labName name of lab to be created
+     * @param fileName name of data file to read from
+     * @return the created lab
+     */
     public Lab buildLabFromFile(String labName, String fileName) 
     {
         Lab lab = new Lab(labName);
@@ -77,6 +89,13 @@ public class Labs
         return null;
     }
 
+    /**
+     * Finds the first lab that has a device for rent.
+     * @param md device to be rented
+     * @param requestDate rent request date
+     * @param dueDate rent due date
+     * @return lab from which device can be rented from
+     */
     public Lab rentDeviceAvailable(MobileDevice md, String requestDate, String dueDate) 
     {
         for(Lab lab : labs)
