@@ -71,9 +71,9 @@ public class Assignment_2
          /* TASK 4 - ask for the same device in all labs
           * if you can find a lab, rent the device from that lab
           */
-        //TODO
+        System.out.println("\n\n *" + " TASK 4 " + "*");
 
         /* TASK 5 - calculate maximum value tag for each lab */
-        //TODO
+        System.out.println("Maximum value tag for lab " + lab.labName + " is: " + lab.findMaximumValueTag());
     }
 }
