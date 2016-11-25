@@ -51,6 +51,7 @@ public class Assignment_2
         	System.out.println(Helper.printAvailable(device, rentDate, lab));
             device.rentDevice(rentDate, dueDate, lab);
             System.out.println("wanted = " + device);
+            device.returnDevice(lab);
         }
         else
         	System.out.println(Helper.printUnavailable(device, rentDate));

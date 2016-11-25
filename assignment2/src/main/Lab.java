@@ -95,6 +95,17 @@ public class Lab implements MaxTagValue
     	// check if device is rented and try to rent it
         if(!wanted.isRented(this))
         	return wanted.rentDevice(requestDate, dueDate, this);
+        else
+        {
+        	try 
+        	{
+				return (Helper.timeDifference(wanted.availableDate(this), requestDate) > 0);
+			} 
+        	catch (DateFormatException e) 
+        	{
+        		System.out.println("DateFormatException when requesting rental.");
+			}
+        }
         
         return false;
     }

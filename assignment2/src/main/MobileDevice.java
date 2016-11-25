@@ -33,12 +33,11 @@ class MobileDevice
 	// if one the exceptions occur there is no RentSettings object
 	public boolean rentDevice(String rentDate, String dueDate, Lab lab) 
 	{
-		RentSettings rs = null;
-
 		try
 		{
-			if(Helper.timeDifference(dueDate, availableDate(lab)) > 0)
-				rs = new RentSettings(rentDate, dueDate, lab);
+			setRs(new RentSettings(rentDate, dueDate, lab));
+			this.lab = lab;
+			return true;
 		}
 		catch(DateFormatException exc)
 		{
@@ -50,15 +49,16 @@ class MobileDevice
 			System.out.println("RentPriodException when trying to rent device.");
 			return false;
 		}
-
-		setRs(rs);
-		return true;
 	}
 
 	// destroy the RentSettings object for this device
 	public void returnDevice(Lab lab) 
 	{
-		//TODO
+		if(this.lab.equals(lab))
+		{
+			setRs(null);
+			setLab(null);
+		}
 	}
 
 	// return the date when this device is available
@@ -72,7 +72,7 @@ class MobileDevice
 	{
 		String curDate = Helper.getCurrentDate();
 		boolean overdue = false;
-		
+
 		try
 		{
 			overdue = (Helper.timeDifference(curDate, rs.dueDate) < 0);
@@ -81,13 +81,13 @@ class MobileDevice
 		{
 			System.out.println("DateFormatException when checking for overdue device.");
 		}
-		
+
 		return overdue;
 	}
 
 	public boolean isRented(Lab l) 
 	{
-		return rs != null;
+		return (rs != null ? rs.getBorrowed() : false);
 	}
 
 	/**
@@ -132,14 +132,14 @@ class MobileDevice
 	public String toString() 
 	{
 		String ret;
-		
+
 		// check if device belongs to a lab
 		ret = (lab == null ? deviceName(false) : deviceName(true));
-		
+
 		// check if device is rented
 		if(rs != null)
 			ret += " " + rs.toString();
-		
+
 		return ret;
 	}
 
@@ -190,6 +190,11 @@ class MobileDevice
 					", dueDate='" + dueDate + '\'' + MobileDevice.this.lab.labName +
 					", borrowed=" + borrowed +
 					'}';
+		}
+
+		public boolean getBorrowed()
+		{
+			return borrowed;
 		}
 	}
 }
