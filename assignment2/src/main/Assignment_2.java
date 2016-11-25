@@ -18,10 +18,10 @@ public class Assignment_2
 		
 		// build labs from files
 		Labs labs = new Labs(2);
-		System.out.println("Newnham Lab\n-----------");
+		System.out.println("York Lab\n-----------");
 		labs.addDevicesToLab("Seneca@York", "YorkLab.txt");
 		System.out.println();
-		System.out.println("York Lab\n--------");
+		System.out.println("Newnham Lab\n--------");
 		labs.addDevicesToLab("Newnham", "NewnhamLab.txt");
 
 		/* TASK 2 - ask for a device that is not in any lab inventory */
