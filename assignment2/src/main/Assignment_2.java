@@ -2,6 +2,10 @@ package main;
 
 import java.util.Vector;
 
+/**
+ * Main entry for assignment.
+ * @author Ashrafi 030
+ */
 public class Assignment_2
 {
 

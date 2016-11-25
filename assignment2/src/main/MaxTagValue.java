@@ -1,5 +1,10 @@
 package main;
 
+/**
+ * Interface that finds maximum value tag.
+ * @author Ashrafi 030
+ *
+ */
 public interface MaxTagValue 
 {
 

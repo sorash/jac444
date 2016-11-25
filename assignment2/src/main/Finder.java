@@ -1,5 +1,9 @@
 package main;
 
+/**
+ * Finder class used to get maximum value of given values.
+ * @author Ashrafi 030
+ */
 public class Finder 
 {
 	/**
