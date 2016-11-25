@@ -4,6 +4,10 @@ import java.util.Vector;
 
 import main.MobileDevice.RentSettings;
 
+/**
+ * A lab containing mobile devices.
+ * @author Ashrafi 030
+ */
 public class Lab implements MaxTagValue 
 {
     String labName;

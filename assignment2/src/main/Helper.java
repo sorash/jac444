@@ -5,6 +5,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Helper class for date functions.
+ * @author Ashrafi 030
+ */
 public class Helper 
 {
 	/**

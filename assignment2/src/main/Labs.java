@@ -5,6 +5,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Vector;
 
+/**
+ * Class containing all the labs used in the program.
+ * @author Ashrafi 030
+ */
 public class Labs 
 {
     public Lab[] labs;        // a collection of labs of type array

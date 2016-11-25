@@ -2,6 +2,10 @@ package main;
 
 import java.util.Vector;
 
+/**
+ * Main entry for assignment.
+ * @author Ashrafi 030
+ */
 public class Assignment_2
 {
 
@@ -10,8 +14,9 @@ public class Assignment_2
 
 
 		/* TASK 1 - build labs from files - at least two labs */
-
-		System.out.println("\n\n *" + " TASK 1 " + "*");
+		System.out.println("*" + " TASK 1 " + "*");
+		
+		// build labs from files
 		Labs labs = new Labs(2);
 		System.out.println("Newnham Lab\n-----------");
 		labs.addDevicesToLab("Seneca@York", "YorkLab.txt");
@@ -20,8 +25,9 @@ public class Assignment_2
 		labs.addDevicesToLab("Newnham", "NewnhamLab.txt");
 
 		/* TASK 2 - ask for a device that is not in any lab inventory */
-
 		System.out.println("\n\n *" + " TASK 2 " + "*");
+		
+		// create a device and find it in a lab
 		MobileDevice device = new MobileDevice("Android20", 20);
 		Lab lab = labs.isThereDeviceInLabs(device);
 		if(lab == null)
@@ -34,12 +40,16 @@ public class Assignment_2
 		 *  issue the rent request with new dates and print the device
 		 */
 		System.out.println("\n\n *" + " TASK 3 " + "*");
+		
+		// set a new device and rent dates
 		device = new MobileDevice("Android", 25);
 		String rentDate = "11/09/2016", dueDate = "11/11/2016";
 
+		// try to rent device
 		lab = labs.rentDeviceAvailable(device, rentDate, dueDate);
 		if(lab != null)
 		{
+			// rent successful
 			System.out.println(Helper.printAvailable(device, rentDate, lab));
 			device.rentDevice(rentDate, dueDate, lab);
 			System.out.println("wanted = " + device);
@@ -47,9 +57,11 @@ public class Assignment_2
 		else
 			System.out.println(Helper.printUnavailable(device, rentDate));        
 		
+		// try to rent it again
 		Lab lab2 = labs.rentDeviceAvailable(device, rentDate, dueDate);
 		if(lab2 != null)
 		{
+			// rent successful
 			System.out.println(Helper.printAvailable(device, rentDate, lab2));
 			device.rentDevice(rentDate, dueDate, lab2);
 			System.out.println("wanted = " + device);
@@ -57,11 +69,14 @@ public class Assignment_2
 		else
 			System.out.println(Helper.printUnavailable(device, rentDate));
 		
+		// return the device so it can be rented again
 		device.returnDevice(lab);
 
+		// try to rent it one more time
 		lab = labs.rentDeviceAvailable(device, rentDate, dueDate);
 		if(lab != null)
 		{
+			// rent successful
 			System.out.println(Helper.printAvailable(device, rentDate, lab));
 			System.out.println("wanted = " + device);
 		}
@@ -72,8 +87,9 @@ public class Assignment_2
 		 * if you can find a lab, rent the device from that lab
 		 */
 		System.out.println("\n\n *" + " TASK 4 " + "*");
+		
+		// find all labs that contain the device
 		Vector<Lab> allLabs = labs.findDeviceInAllLabs(device);
-
 		if(allLabs != null)
 		{
 			for(Lab l : allLabs)
@@ -82,6 +98,7 @@ public class Assignment_2
 		else
 			System.out.println(Helper.printNonexistent(device));
 		
+		// find all labs where device can be rented from
 		Vector<Lab> allRentLabs = labs.findRentalDeviceInAllLabs(device);
 		if(allRentLabs != null)
 		{
