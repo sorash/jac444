@@ -9,8 +9,14 @@ public class Finder
 	 */
     public static int findMaximumValueTag(int[] input) 
     {
-        int maxElement = -100;
-        //TODO
-        return maxElement;
+    	int max = input[0];
+        
+        for(int i = 0; i < input.length; i++)
+        {
+     	   if(input[i] > max)
+     		   max = input[i];
+        }
+        
+        return max;
     }
 }

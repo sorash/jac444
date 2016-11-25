@@ -58,15 +58,12 @@ public class Lab implements MaxTagValue
      */
     public int findMaximumValueTag() 
     {
-       int max = devices.firstElement().valueTag;
-       
-       for(MobileDevice device : devices)
-       {
-    	   if(device.valueTag > max)
-    		   max = device.valueTag;
-       }
-       
-       return max;
+    	int[] values = new int[devices.size()];
+    	
+    	for(int i = 0; i < devices.size(); i++)
+    		values[i] = devices.get(i).valueTag;
+    	
+    	return Finder.findMaximumValueTag(values);
     }
 
     @Override
